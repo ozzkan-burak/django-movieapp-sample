@@ -2,10 +2,10 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the movies index page.")
+    return render(request, "index.html")
 
 def movies(request):
-    return HttpResponse("Hello, world. You're at the movies page.")
+    return render(request, "movies.html")
 
 def movie_details(request, slug):
-    return HttpResponse("Hello, world. You're at the " + slug + " movie details page.")
+    return render(request, "movie-details.html", {"slug": slug})
