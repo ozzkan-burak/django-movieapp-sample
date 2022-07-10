@@ -18,29 +18,7 @@
       {% include 'partials/_topbar.html' %}
 
       <div class="container-fluid">
-        <div class="osahan-slider">
-          <div class="osahan-slider-item">
-            <img
-              src="{% static 'img/slider1.jpg' %}"
-              alt="slider1"
-              class="img-fluid rounded"
-            />
-          </div>
-          <div class="osahan-slider-item">
-            <img
-              src="{% static 'img/slider2.jpg' %}"
-              alt="slider1"
-              class="img-fluid rounded"
-            />
-          </div>
-          <div class="osahan-slider-item">
-            <img
-              src="{% static 'img/slider3.jpg' %}"
-              alt="slider1"
-              class="img-fluid rounded"
-            />
-          </div>
-        </div>
+        {% include 'partials/_slider.html' %}
         {% comment %} title {% endcomment %}
         <div
           class="d-sm-flex align-items-center justify-content-between mt-4 mb-3"
@@ -184,17 +162,7 @@
       </div>
     </div>
 
-    <footer class="sticky-footer bg-white">
-      <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-          <span
-            >Copyright &copy; Bookishow 2019 | Made with
-            <i class="fas fa-heart fa-fw text-danger"></i> by
-            <a target="_blank" href="#">Askbootstrap</a></span
-          >
-        </div>
-      </div>
-    </footer>
+   {% include 'partials/_footer.html' %}
   </div>
 </div>
 <a class="scroll-to-top rounded" href="#page-top">
