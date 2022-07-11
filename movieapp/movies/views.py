@@ -43,7 +43,9 @@ data = {
 
 def index(request):
     movies = data["movies"]
-    return render(request, "index.html", {movies})
+    return render(request, "index.html", {
+        "movies": movies
+        })
     # return HttpResponse("index")
 
 def movies(request):
