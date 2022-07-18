@@ -42,14 +42,17 @@ data = {
 
 
 def index(request):
-    movies = data["movies"]
+    movies = data["movies"][-4:]
     return render(request, "index.html", {
         "movies": movies
         })
     # return HttpResponse("index")
 
 def movies(request):
-    return render(request, "movies.html")
+    movies = data["movies"]
+    return render(request, "movies.html",{
+        "movies": movies
+    })
 
 def movie_details(request, slug):
     return render(request, "movie-details.html", {"slug": slug})
