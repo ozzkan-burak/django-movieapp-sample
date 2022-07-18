@@ -1,24 +1,14 @@
 {% load static %}
 <div class="osahan-slider">
-          <div class="osahan-slider-item">
-            <img
-              src="{% static 'img/slider1.jpg' %}"
-              alt="slider1"
-              class="img-fluid rounded"
-            />
-          </div>
-          <div class="osahan-slider-item">
-            <img
-              src="{% static 'img/slider2.jpg' %}"
-              alt="slider1"
-              class="img-fluid rounded"
-            />
-          </div>
-          <div class="osahan-slider-item">
-            <img
-              src="{% static 'img/slider3.jpg' %}"
-              alt="slider1"
-              class="img-fluid rounded"
-            />
-          </div>
-        </div>
+  {% for slide in sliders  %}
+    <div class="osahan-slider-item">
+      <a href="{% url 'movie_details' slide.url %}" >
+        <img
+          src="{% static 'img/'|add:slide.imageUrl %}"
+          alt={{slide.name}}
+          class="img-fluid rounded"
+        />
+      </a>
+    </div>
+  {% endfor %}
+</div>

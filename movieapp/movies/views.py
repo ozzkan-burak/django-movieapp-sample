@@ -37,14 +37,32 @@ data = {
             "date": "date(2021,10,21)"
         }
     ],
-    "slider": []
+    "sliders": [
+        {
+            "imageUrl": "slider1.jpg",
+            "name": "slider1",
+            "url":"film-adi-1",
+        },
+        {
+            "imageUrl": "slider2.jpg",
+            "name": "slider2",
+            "url": "film-adi-2",
+        },
+        {
+            "imageUrl": "slider3.jpg",
+            "name": "slider3",
+            "url": "film-adi-3",
+        }
+    ]
 }
 
 
 def index(request):
     movies = data["movies"][-4:]
+    sliders=data["sliders"]
     return render(request, "index.html", {
-        "movies": movies
+        "movies": movies,
+        "sliders":sliders
         })
     # return HttpResponse("index")
 
