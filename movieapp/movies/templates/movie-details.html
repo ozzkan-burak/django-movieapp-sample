@@ -1,5 +1,7 @@
-{% extends 'movies/base.html' %} {% load static %} {% block css_files %} {%
-endblock %} {% block page_title %} Movies Index Page {% endblock %} {% block content %}
+{% extends 'movies/base.html' %} 
+{% load static %} 
+{% block css_files %} {%endblock %} 
+{% block page_title %} Movies Index Page {% endblock %} {% block content %}
 <div id="wrapper">
   {% include 'partials/_sidebar.html' %}
 
@@ -20,7 +22,7 @@ endblock %} {% block page_title %} Movies Index Page {% endblock %} {% block con
                 <small class="text-muted">8,784</small>
               </div>
               <img
-                src="{% static 'img/cover3.jpg' %}"
+                src="{% static 'img/'|add:movie.coverImage %}"
                 class="img-fluid"
                 alt="..."
               />
@@ -29,7 +31,7 @@ endblock %} {% block page_title %} Movies Index Page {% endblock %} {% block con
           <div class="col-xl-3 col-lg-3">
             <div class="bg-white p-3 widget shadow rounded mb-4">
               <img
-                src="{% static 'img/m1.jpg' %}"
+                src="{% static 'img/'|add:movie.imageUrl %}"
                 class="img-fluid rounded"
                 alt="..."
               />
@@ -57,7 +59,7 @@ endblock %} {% block page_title %} Movies Index Page {% endblock %} {% block con
               >
                 <div class="col-lg-7 m-b-4">
                   <h3 class="text-gray-900 mb-0 mt-0 font-weight-bold">
-                    The Fate of the Furious <small>2019</small>
+                    {{movies.title}}
                   </h3>
                   <p class="mb-0 text-gray-800">
                     <small class="text-muted"
