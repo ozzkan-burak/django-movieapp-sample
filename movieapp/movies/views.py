@@ -8,7 +8,7 @@ data = {
             "title": "film adı 1",
             "description": "film açıklama 1",
             "imageUrl": "m1.jpg",
-            "coverImage": "cover.jpg",
+            "coverImage": "cover1.jpg",
             "slug": "film-adi-1",
             "language": "english",
             "date" : "date(2021,10,10)"
@@ -78,11 +78,14 @@ def movies(request):
 
 def movie_details(request, slug):
     movies = data["movies"]
-    selectedMovies = None
-    for movie in movies:
-        if movie["slug"] == slug:
-            selectedMovies = movie
+    # selectedMovies = None
+    # for movie in movies:
+    #     if movie["slug"] == slug:
+    #         selectedMovies = movie
+    
+    selectedMovie = next(movie for movie in movies if movie["slug"] == slug)
+
     return render(request, "movie-details.html", {
-        "movie": selectedMovies
+        "movie": selectedMovie
         }
     )
